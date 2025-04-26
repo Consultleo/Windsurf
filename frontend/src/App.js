@@ -47,12 +47,16 @@ function App() {
       <img src={headerImg} alt="Grocery Store" className="header-image" />
       <header className="grocery-header">
         <span role="img" aria-label="shop" style={{fontSize: '2rem', marginRight: 12}}>🛒</span>
-        <span className="shop-title">FreshMart Grocery Shop</span>
+        <span className="shop-title">FreshMarts Grocery Shop</span>
       </header>
       <div className="grocery-content">
         {error && <div className="error-msg">{error}</div>}
         <div className="table-container">
           <table className="product-table">
+            <colgroup>
+              <col style={{ width: '80%' }} />
+              <col style={{ width: '20%' }} />
+            </colgroup>
             <thead>
               <tr>
                 <th>Product</th>
@@ -66,7 +70,7 @@ function App() {
                 products.map(product => (
                   <tr key={product.id}>
                     <td>{product.name}</td>
-                    <td style={{textAlign: 'right'}}>{Number(product.price).toFixed(2)} €</td>
+                    <td>{Number(product.price).toFixed(2)} €</td>
                   </tr>
                 ))
               )}
